@@ -166,8 +166,10 @@ endif()
 # A chance to setup sleef build static libs splitly.
 # Impact scope limited in sleef project.
 if (DEFINED SLEEF_BUILD_STATIC_LIBS)
-  set(COMMON_TARGET_DEFINITIONS SLEEF_STATIC_LIBS=1)
-  set(SLEEF_STATIC_LIBS 1)
+  if(SLEEF_BUILD_STATIC_LIBS)
+    set(COMMON_TARGET_DEFINITIONS SLEEF_STATIC_LIBS=1)
+    set(SLEEF_STATIC_LIBS 1)
+  endif()
 endif()
 
 if(SLEEF_ENABLE_LTO AND SLEEF_STATIC_LIBS)
