@@ -30,7 +30,7 @@ option(SLEEF_ENABLE_CUDA "Enable CUDA" OFF)
 option(SLEEF_ENABLE_CXX "Enable C++" OFF)
 
 # default config build
-set(SLEEF_STATIC_LIBS 0)
+set(BUILD_SHARED_LIBS 0)
 
 # Function used to generate safe command arguments for add_custom_command
 function(command_arguments PROPNAME)
