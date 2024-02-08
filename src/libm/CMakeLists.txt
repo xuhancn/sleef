@@ -359,6 +359,7 @@ endif()
 # Original sleef sources
 set(STANDARD_SOURCES rempitab.c)
 
+message("!!!!!!!!!!!!!!!!!!!!! CMAKE_STATIC_LIBRARY_PREFIX: ${CMAKE_STATIC_LIBRARY_PREFIX}")
 add_library(${TARGET_LIBSLEEF} ${STANDARD_SOURCES})
 add_dependencies(${TARGET_LIBSLEEF} ${TARGET_HEADERS})
 set_target_properties(${TARGET_LIBSLEEF} PROPERTIES
