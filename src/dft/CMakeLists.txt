@@ -323,7 +323,11 @@ foreach(T ${LIST_SUPPORTED_FPTYPE})
 endforeach()
 
 # Target libdft
-add_library(${TARGET_LIBDFT} $<TARGET_OBJECTS:dftcommon_obj> $<TARGET_OBJECTS:${TARGET_LIBARRAYMAP_OBJ}>)
+if(SLEEF_BUILD_SHARED_LIBS)
+  add_library(${TARGET_LIBDFT} SHARED $<TARGET_OBJECTS:dftcommon_obj> $<TARGET_OBJECTS:${TARGET_LIBARRAYMAP_OBJ}>)
+else()
+  add_library(${TARGET_LIBDFT} STATIC $<TARGET_OBJECTS:dftcommon_obj> $<TARGET_OBJECTS:${TARGET_LIBARRAYMAP_OBJ}>)
+endif()
 target_link_libraries(${TARGET_LIBDFT} ${TARGET_LIBSLEEF} ${LIBM})
 
 foreach(T ${LIST_SUPPORTED_FPTYPE})

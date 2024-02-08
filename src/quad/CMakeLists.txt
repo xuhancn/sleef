@@ -202,7 +202,11 @@ foreach(SIMD ${SLEEF_SUPPORTED_QUAD_EXTENSIONS})
   endif()
 endforeach()
 
-add_library(sleefquad rempitabqp.c ${SLEEFQUAD_OBJECTS})
+if(SLEEF_BUILD_SHARED_LIBS)
+  add_library(sleefquad SHARED rempitabqp.c ${SLEEFQUAD_OBJECTS})
+else()
+  add_library(sleefquad STATIC rempitabqp.c ${SLEEFQUAD_OBJECTS})
+endif()
 
 set_target_properties(sleefquad PROPERTIES
   VERSION ${SLEEF_VERSION}
