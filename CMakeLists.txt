@@ -1,6 +1,6 @@
 
 # Options
-option(SLEEF_BUILD_SHARED_LIBS "Build sleef as static library" OFF)
+option(SLEEF_BUILD_SHARED_LIBS "Build sleef as static library" ON)
 option(SLEEF_BUILD_STATIC_TEST_BINS "Build statically linked test executables" OFF)
 option(SLEEF_ENABLE_LTO "Enable LTO on GCC or ThinLTO on clang" OFF)
 option(SLEEF_BUILD_LIBM "libsleef will be built." ON)
@@ -28,9 +28,6 @@ option(SLEEF_DISABLE_SSL "Disable testing with the SSL library" OFF)
 
 option(SLEEF_ENABLE_CUDA "Enable CUDA" OFF)
 option(SLEEF_ENABLE_CXX "Enable C++" OFF)
-
-# default config build
-set(SLEEF_BUILD_SHARED_LIBS 0)
 
 # Function used to generate safe command arguments for add_custom_command
 function(command_arguments PROPNAME)
